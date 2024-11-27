@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './scss/app.scss';
+import Header from './components/Header/Header';
+import Categories from './components/Categories/Categories';
+import Sort from './components/Sort/Sort';
+import PizzaBlock from './components/PizzaBlock/PizzaBlock';
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+	return (
+		<>
+			<div className="wrapper">
+				<div className="content">
+					<Header />
+					<div className="container">
+						<div className="content__top">
+							<Categories />
+							<Sort />
+						</div>
+						<h2 className="content__title">Все пиццы</h2>
+						<div className="content__items">
+							<PizzaBlock />
+							<PizzaBlock />
+							<PizzaBlock />
+						</div>
+					</div>
+				</div>
+			</div>
+		</>
+	);
 }
 
-export default App
+export default App;
